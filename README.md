@@ -1,35 +1,35 @@
-# Excel Currency Converter (Global to INR)
+# Excel Currency Converter (Col Q to R)
 
-A high-performance, client-side web application that converts earnings in an Excel file from various global currencies (USD, EUR, GBP, etc.) into Indian Rupees (INR) using live exchange rates.
+A professional, high-speed tool to convert Excel earnings into Indian Rupees (INR). This version is optimized to read **Column Q** for source currency and output the result into **Column R**.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Tech](https://img.shields.io/badge/tech-Vanilla%20JS-yellow.svg)
-![Security](https://img.shields.io/badge/privacy-Client--Side-green.svg)
+## ✨ Key Features
+- **Strict Column Mapping**: Specifically designed for reports where **Column Q** contains the currency code (USD, EUR, GBP) and **Column R** is reserved for the INR calculation.
+- **Smart Detection**: Automatically finds the "Earnings" value column by scanning headers for keywords like "Earnings($)" or "Amount".
+- **Real-Time Data**: Connects to the ExchangeRate-API for live mid-market rates.
+- **Privacy First**: No server-side processing. Your financial data stays in your browser.
+- **Dark Mode**: Optimized UI for both light and dark environments.
 
-## 🚀 Features
+## 🛠 Tech Stack
+- **JavaScript (ES6+)**: Pure vanilla logic for maximum performance.
+- **SheetJS**: Advanced Excel manipulation without formatting loss.
+- **CSS3**: Modern glassmorphism with responsive layout.
 
-- **Automatic Column Detection**: Smartly identifies columns like "Platforms Currency" and "Earnings ($)".
-- **Live Exchange Rates**: Fetches real-time data from `open.er-api.com`.
-- **Privacy Focused**: All processing happens in your browser. No data is uploaded to any server.
-- **Glassmorphic UI**: Modern, responsive design with Dark Mode support.
-- **Large File Support**: Optimized to handle workbooks with 10,000+ rows using efficient memory management.
-- **No Backend**: Deployable on GitHub Pages, Vercel, or Netlify with zero configuration.
+## 🚀 How to Deploy on GitHub Pages
+1. Create a new repository on GitHub.
+2. Upload `index.html`, `style.css`, and `script.js`.
+3. Go to **Settings > Pages**.
+4. Select the `main` branch and click **Save**.
+5. Your application will be live at `https://yourusername.github.io/your-repo-name/`.
 
-## 🛠️ Supported Currencies
+## 📖 Usage Guide
+1. **Prepare File**: Ensure your Excel file has currencies in Column Q.
+2. **Upload**: Drag your file into the dashboard.
+3. **Convert**: Click 'Start Conversion'. The app will fetch rates and calculate values.
+4. **Download**: Get your file back with the "Earning (₹)" column fully populated in Column R.
 
-- **USD** (US Dollar)
-- **EUR** (Euro)
-- **GBP** (British Pound)
-- **JPY** (Japanese Yen)
-- **CAD** (Canadian Dollar)
-- **AUD** (Australian Dollar)
-- **SGD** (Singapore Dollar)
-- **AED** (UAE Dirham)
-- *And many more via live API*
+## 📝 Supported Currencies
+Supports all major world currencies via API fallback, including:
+- USD, EUR, GBP, AED, CAD, AUD, JPY, SGD.
 
-## 📦 Installation & Deployment
-
-### Local Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/excel-currency-converter.git
+## ⚖️ License
+MIT License - Free for personal and commercial use.
