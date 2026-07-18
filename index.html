@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel Currency Converter | Global to INR</title>
-    <meta name="description" content="Convert Excel earnings from global currencies to INR automatically using live exchange rates.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Heroicons for UI -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <!-- SheetJS Library -->
@@ -24,10 +23,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <i class="fas fa-file-excel"></i>
+                <i class="fas fa-file-invoice-dollar"></i>
                 <span>Excel<span>INR</span></span>
             </div>
-            <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+            <button id="themeToggle" class="theme-toggle">
                 <i class="fas fa-moon"></i>
             </button>
         </div>
@@ -36,7 +35,7 @@
     <main class="container">
         <header class="hero">
             <h1>Currency Converter</h1>
-            <p>Upload your earnings report. We'll automatically detect currencies and convert them to INR with live market rates.</p>
+            <p>Upload your report. We'll convert <strong>Column Q (Currency)</strong> to <strong>Column R (INR)</strong> using live rates.</p>
         </header>
 
         <section class="converter-card">
@@ -45,17 +44,17 @@
                 <div class="upload-icon">
                     <i class="fas fa-cloud-upload-alt"></i>
                 </div>
-                <h3>Drag & Drop Excel File</h3>
-                <p>or click to browse from your computer</p>
-                <span class="file-info" id="fileNameDisplay">Supported formats: .xlsx, .xls</span>
+                <h3>Drop your Excel file here</h3>
+                <p>Supports .xlsx and .xls formats</p>
+                <span class="file-info" id="fileNameDisplay">No file selected</span>
             </div>
 
             <div class="action-bar">
                 <button id="convertBtn" class="btn btn-primary" disabled>
-                    <i class="fas fa-sync-alt"></i> Convert to INR
+                    <i class="fas fa-bolt"></i> Start Conversion
                 </button>
                 <button id="downloadBtn" class="btn btn-success" disabled>
-                    <i class="fas fa-download"></i> Download Excel
+                    <i class="fas fa-file-download"></i> Download Updated File
                 </button>
             </div>
 
@@ -72,20 +71,20 @@
 
         <section class="summary-grid" id="summaryGrid">
             <div class="stat-card">
-                <span class="stat-label">Total Rows</span>
+                <span class="stat-label">Rows Processed</span>
                 <span class="stat-value" id="statRows">-</span>
             </div>
             <div class="stat-card">
-                <span class="stat-label">Currencies Found</span>
-                <span class="stat-value" id="statCurrencies">-</span>
+                <span class="stat-label">Currency Source</span>
+                <span class="stat-value" id="statSourceCol">Col Q</span>
             </div>
             <div class="stat-card">
-                <span class="stat-label">Time Taken</span>
+                <span class="stat-label">Live Rate Source</span>
+                <span class="stat-value" id="statApi">Live</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Process Time</span>
                 <span class="stat-value" id="statTime">-</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-label">Rate Source</span>
-                <span class="stat-value" id="statSource">Live</span>
             </div>
         </section>
 
@@ -93,7 +92,7 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; 2023 Excel Currency Converter. Client-side processing (Privacy Secured).</p>
+        <p>Security Note: All processing is done locally in your browser. No data leaves your computer.</p>
     </footer>
 
     <script src="script.js"></script>
